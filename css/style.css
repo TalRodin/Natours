@@ -237,6 +237,33 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   transform: translateY(-2px); }
 
+.composition {
+  position: relative; }
+  .composition__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+    transition: all 0.2s;
+    outline-offset: 2rem; }
+    .composition__photo--p1 {
+      left: 0;
+      top: -2rem; }
+    .composition__photo--p2 {
+      right: 0;
+      top: 2rem; }
+    .composition__photo--p3 {
+      left: 20%;
+      top: 10rem; }
+    .composition__photo:hover {
+      outline: 1.5rem solid #55c57a;
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+      z-index: 20; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.95); }
+
 .card {
   perspective: 150rem;
   -moz-perspective: 150rem;
@@ -332,33 +359,6 @@ body {
     font-size: 6rem;
     font-weight: 100; }
 
-.composition {
-  position: relative; }
-  .composition__photo {
-    width: 55%;
-    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
-    border-radius: 2px;
-    position: absolute;
-    z-index: 10;
-    transition: all 0.2s;
-    outline-offset: 2rem; }
-    .composition__photo--p1 {
-      left: 0;
-      top: -2rem; }
-    .composition__photo--p2 {
-      right: 0;
-      top: 2rem; }
-    .composition__photo--p3 {
-      left: 20%;
-      top: 10rem; }
-    .composition__photo:hover {
-      outline: 15px solid #55c57a;
-      transform: scale(1.05) translateY(-0.5rem);
-      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
-      z-index: 20; }
-  .composition:hover .composition__photo:not(:hover) {
-    transform: scale(0.95); }
-
 .feature-box {
   background-color: rgba(255, 255, 255, 0.8);
   font-size: 1.5rem;
@@ -393,7 +393,7 @@ body {
     float: left;
     -webkit-shape-outside: circle(50% at 50% 50%);
     shape-outside: circle(50% at 50% 50%);
-    -webkit-shape-path: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg);
     position: relative; }
@@ -401,7 +401,7 @@ body {
     height: 100%;
     transform: translateX(-4rem) scale(1.4);
     backface-visibility: hidden;
-    transition: all 0.5s; }
+    transition: all .5s; }
   .story__text {
     transform: skewX(12deg); }
   .story__caption {
@@ -414,7 +414,7 @@ body {
     font-size: 1.7rem;
     text-align: center;
     opacity: 0;
-    transition: all 0.5s;
+    transition: all .5s;
     backface-visibility: hidden; }
   .story:hover .story__caption {
     opacity: 1;
@@ -469,8 +469,22 @@ body {
   margin-top: -10rem; }
 
 .section-stories {
-  position: absolute;
+  position: relative;
   padding: 15rem 0; }
+
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+
+.book {
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
+  background-size: 100%;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+  height: 50rem; }
+  .book__form {
+    width: 50%;
+    padding: 6rem; }
 
 .header {
   height: 95vh;
